@@ -56,7 +56,10 @@ def compare_objects(o1,o2,prefix=''):
                 err.append("Types for %s/%s are different (%r,%r)" % (prefix,k,v1,v2))
     return err
 
-okayed = set(open('tested-ok.txt').read().split('\n'))
+try:
+    okayed = set(open('tested-ok.txt').read().split('\n'))
+except:
+    okayed = []
 ok = open('tested-ok.txt', 'a')
 
 def test_loader_and_backward_compatibility_api_success():

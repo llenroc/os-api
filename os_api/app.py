@@ -23,6 +23,7 @@ from .stats import setup_stats
 def setup_logging():
     root = logging.getLogger()
     root.setLevel(logging.INFO)
+    logging.info("Setting up logger!")
 
     ch = logging.StreamHandler(sys.stderr)
     ch.setLevel(logging.DEBUG)
@@ -31,6 +32,7 @@ def setup_logging():
     root.addHandler(ch)
 
     logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+    logging.info("Done setting up logger!")
 
 
 def create_app():
